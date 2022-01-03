@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<style>
+body {
+    background-image: url('https://theatreforward.org/wp-content/uploads/2014/09/susnet.jpg');
+    }
+</style>
+<body>
+<center>
+    <br><br><br><h1 style="color:white;border:white;font-family:Fantasy">Login</h1>
+    <div class="container">
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        {% for message in messages %}
+        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+            <span>{{ message }}</span>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        {% endfor %}
+        {% endif %}
+        {% endwith %}
+    </div>
+    <form method="post">
+        <table>
+            <tr>
+                <! box to input username>
+                <td><label style="color:white;" for="username">Username</label></td>
+                <td><input name="username" id="username"
+                           required></td></tr>
+            <tr>
+                <! box to input password>
+                <td><label style="color:white;" for="password">Password</label></td>
+                <td> <input type="password" name="password" id="password"
+                            required></td></tr>
+            <tr>
+                <! Submission button for username and password>
+                <td colspan='2'><input type="submit" value="Login"/></td>
+            </tr>
+        </table>
+    </form>
+    <br><br>
+    <a href="http://localhost:5000/update">
+        <button>Click here to change password</button>
+    </a>
+</center>
+</body>
+</html>
